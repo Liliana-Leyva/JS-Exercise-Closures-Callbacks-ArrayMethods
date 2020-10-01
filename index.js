@@ -27,8 +27,10 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ * the count variable in counter1 code is inside the function and count variable on counter2 code is global.
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ * Counter1 code has closure because it has access to the outer scope in its inner scope.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
@@ -56,12 +58,15 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(min, max){
 
-    /*Code Here*/
-
-}
-
+  let numberOfPoints=  Math.random() * (max - min) + min;
+  return Math.round(numberOfPoints);
+  
+  }
+  
+  console.log(inning(0,2));
+    
 /* Task 3: finalScore()
 
 Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
@@ -75,12 +80,31 @@ finalScore(inning, 9) might return:
 }
 
 */ 
+  function finalScore(inning, numberOfGames){
+    let casa = 0;
+    let visitantes= 0;
+    for(let i=1; i<=numberOfGames; i++){
+      casa = casa + inning()
+      visitantes= casa + inning()
+      //let finalResult= {}
+      console.log(casa, visitantes)
 
-function finalScore(/*code Here*/){
+      
+    }
+  
+  }
+  finalScore(inning, 10);
+  
+  
+  
+  /*function finalScore(callback, innings){
+    In here there needs to be 2 variables.
+    1. A home score
+    2. A away score
+    A for loop that goes through the innings and adds the callback to the variables on every iteration. and then returns a string that includes the home score and away score at the end.
+  }*/
+  
 
-  /*Code Here*/
-
-}
 
 /* Task 4: 
 
