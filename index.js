@@ -35,7 +35,7 @@ function processFirstItem(stringList, callback) {
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  * It would be better counter2 if you are going to use it more than once because the variables on 
- * counter1 are global and on counte1 are declared inside the function.
+ * counter2 are global and on counte1 are declared inside the function.
  * 
  *
 */
@@ -89,6 +89,8 @@ function finalScore(inning, numberOfGames){//this function takes the last functi
   return finalResult
 } 
 console.log("task 3: ",(finalScore(inning,9)));
+console.log("   ");
+
 
 
 
@@ -119,6 +121,7 @@ and returns the score at each pont in the game, like so:
 8th inning: awayTeam - homeTeam
 9th inning: awayTeam - homeTeam
 Final Score: awayTeam - homeTeam */
+console.log("task 4:");
 
  function scoreboard(getInningScore,inning,innings) {
           
